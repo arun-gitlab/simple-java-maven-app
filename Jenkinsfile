@@ -14,6 +14,11 @@ pipeline {
                 sh 'mvn -B -DskipTests clean package'
             }
         }
+        stage('Security Scan') {
+            steps {
+                sh 'echo "Security Scan..."'
+            }
+        }
         stage('Test') {
             steps {
                 sh 'mvn test'
